@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Método Integrativo CEC® · Cuerpo · Emoción · Consciencia · Kiko Martínez</title>
+<meta name="description" content="Una experiencia inmersiva del Método Integrativo CEC® creado por Kiko Martínez. Cuerpo · Emoción · Consciencia. Demo navegable.">
+<meta name="theme-color" content="#1C1A17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@200;300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* ====================================================================
+   MÉTODO INTEGRATIVO CEC® · EXPERIENCIA DEMO CINEMATOGRÁFICA
+   Diseño móvil-first · Kiko Martínez · 2026
+   ==================================================================== */
+
+:root {
+  --oscuro: #1C1A17;
+  --oscuro-prof: #0E0D0B;
+  --dorado: #C9A96E;
+  --dorado-claro: #E0C896;
+  --dorado-tenue: rgba(201, 169, 110, 0.18);
+  --crema: #F5EDD8;
+  --crema-suave: #EFE6CC;
+  --verde: #7A8C6E;
+  --verde-tenue: rgba(122, 140, 110, 0.15);
+  --tinta: rgba(245, 237, 216, 0.78);
+  --tinta-suave: rgba(245, 237, 216, 0.55);
+  --linea: rgba(201, 169, 110, 0.25);
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Raleway', system-ui, sans-serif;
+  --texto: 'Lato', system-ui, sans-serif;
+
+  --t-suave: 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  --t-lento: 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--oscuro-prof);
+}
+
+body {
+  font-family: var(--texto);
+  color: var(--crema);
+  background: var(--oscuro-prof);
+  line-height: 1.65;
+  font-weight: 300;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.experiencia {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--oscuro);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0,0,0,0.6);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 40px 0;
+    background: radial-gradient(ellipse at center, #161412 0%, #0a0908 100%);
+  }
+  .experiencia {
+    border-radius: 24px;
+    border: 1px solid rgba(201, 169, 110, 0.08);
+  }
+}
+
+.escena {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 28px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .escena { min-height: 760px; padding: 90px 40px 70px; }
+}
+
+.luz-dorada {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.18) 0%, rgba(201,169,110,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
+}
+.luz-dorada.top-derecha { top: -120px; right: -100px; width: 320px; height: 320px; }
+.luz-dorada.centro { top: 30%; left: 50%; transform: translateX(-50%); width: 420px; height: 420px; opacity: 0.6; }
+.luz-dorada.abajo-izq { bottom: -150px; left: -120px; width: 350px; height: 350px; opacity: 0.7; }
+
+.contenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.aparece {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--t-lento), transform var(--t-lento);
+}
+.aparece.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.retraso-1 { transition-delay: 200ms; }
+.retraso-2 { transition-delay: 400ms; }
+.retraso-3 { transition-delay: 600ms; }
+.retraso-4 { transition-delay: 800ms; }
+.retraso-5 { transition-delay: 1000ms; }
+
+.cintillo {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.cintillo::before, .cintillo::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--dorado);
+  opacity: 0.5;
+}
+
+h1.titulo-principal {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 11vw, 52px);
+  line-height: 1.05;
+  color: var(--crema);
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+h2.titulo-escena {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 1.15;
+  color: var(--crema);
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+h2.titulo-escena em {
+  font-style: italic;
+  color: var(--dorado);
+  font-weight: 400;
+}
+
+.lead {
+  font-family: var(--serif);
+  font-size: clamp(20px, 5vw, 24px);
+  line-height: 1.45;
+  color: var(--tinta);
+  font-weight: 300;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+p.cuerpo {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--tinta);
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+
+.firma {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--dorado-claro);
+  margin-top: 24px;
+  letter-spacing: 0.3px;
+}
+
+/* ESCENA 1 · APERTURA */
+.escena-apertura {
+  background: radial-gradient(ellipse at center, #1f1d19 0%, var(--oscuro-prof) 100%);
+  min-height: 100vh;
+}
+
+.logo-cec {
+  width: 88px;
+  height: 88px;
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 40px;
+  position: relative;
+  background: rgba(201, 169, 110, 0.04);
+}
+.logo-cec::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+  opacity: 0.25;
+}
+.logo-cec span {
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: var(--dorado);
+  font-weight: 400;
+  padding-left: 3px;
+}
+
+.lema-grande {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(22px, 6.5vw, 30px);
+  line-height: 1.5;
+  color: var(--crema);
+  margin: 32px 0;
+}
+.lema-grande .destello {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.lema-grande .destello.activa {
+  opacity: 1;
+  transform: translateY(0);
+}
+.lema-grande .destello em {
+  font-style: normal;
+  color: var(--dorado);
+  font-weight: 400;
+}
+
+.creador {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-top: 50px;
+}
+.creador strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  color: var(--crema);
+  margin-top: 8px;
+}
+
+.scroll-indicador {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--tinta-suave);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: respirar 3s ease-in-out infinite;
+}
+.scroll-indicador::after {
+  content: '';
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--dorado), transparent);
+}
+@keyframes respirar {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
+}
+
+/* ESCENA 2 · MANIFIESTO */
+.escena-manifiesto {
+  background: var(--oscuro);
+  border-top: 1px solid var(--linea);
+}
+
+.bloque-manifiesto {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bloque-manifiesto .cintillo, .bloque-manifiesto .firma {
+  text-align: center;
+  display: block;
+}
+.bloque-manifiesto .cintillo {
+  justify-content: center;
+}
+
+/* ESCENA 3 · TRES PILARES */
+.escena-pilares {
+  background: linear-gradient(180deg, var(--oscuro) 0%, #1a1815 100%);
+}
+
+.pilares {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.pilar {
+  background: rgba(245, 237, 216, 0.03);
+  border-left: 3px solid var(--dorado);
+  padding: 26px 24px;
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pilar::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 90px; height: 90px;
+  background: radial-gradient(circle at top right, var(--dorado-tenue), transparent 70%);
+  pointer-events: none;
+}
+
+.pilar-numero {
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--dorado);
+  margin-bottom: 6px;
+}
+
+.pilar-titulo {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--crema);
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.pilar-frase {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--tinta);
+  line-height: 1.5;
+}
+
+/* ESCENA 4 · ESTO NO ES / ESTO SÍ ES */
+.escena-distincion {
+  background: var(--oscuro);
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 32px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.columna {
+  padding: 22px 22px;
+  border-radius: 12px;
+  text-align: left;
+}
+.columna.no {
+  background: rgba(255, 100, 100, 0.03);
+  border: 1px solid rgba(255, 130, 130, 0.12);
+}
+.columna.si {
+  background: rgba(201, 169, 110, 0.05);
+  border: 1px solid var(--dorado);
+}
+
+.columna h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.columna.no h4 { color: rgba(255, 160, 160, 0.85); }
+.columna.si h4 { color: var(--dorado); }
+
+.columna ul { list-style: none; }
+.columna li {
+  font-size: 14.5px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(245, 237, 216, 0.06);
+  color: var(--tinta);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+.columna li:last-child { border-bottom: none; }
+.columna li::before {
+  font-family: var(--serif);
+  margin-top: 1px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+.columna.no li::before { content: '✕'; color: rgba(255, 160, 160, 0.6); }
+.columna.si li::before { content: '✓'; color: var(--dorado); }
+
+/* ESCENA 5 · EL PROCESO */
+.escena-proceso {
+  background: linear-gradient(180deg, #1a1815 0%, var(--oscuro) 100%);
+}
+
+.proceso-fase {
+  width: 100%;
+  max-width: 440px;
+  text-align: left;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.fase-etiqueta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  background: var(--dorado-tenue);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.fase-caja {
+  background: rgba(245, 237, 216, 0.04);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 22px 22px;
+  position: relative;
+}
+
+.fase-caja.previo {
+  border: 1px solid var(--dorado);
+  background: rgba(201, 169, 110, 0.06);
+}
+
+.fase-titulo {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--crema);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.fase-titulo em {
+  font-style: italic;
+  color: var(--dorado);
+}
+
+.fase-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--tinta);
+  margin-bottom: 14px;
+}
+
+.fase-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.fase-lista li {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dorado-claro);
+  background: rgba(201, 169, 110, 0.1);
+  padding: 5px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.flecha-proceso {
+  text-align: center;
+  margin: 8px 0;
+  color: var(--dorado);
+  font-size: 22px;
+  opacity: 0.7;
+}
+.flecha-proceso::before {
+  content: '↓';
+}
+
+/* ESCENA 6 · ELENA */
+.escena-elena {
+  background: var(--oscuro);
+}
+
+.aviso-demo {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verde);
+  background: var(--verde-tenue);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(122, 140, 110, 0.3);
+}
+
+.ficha-cliente {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(245, 237, 216, 0.03);
+  border: 1px solid var(--linea);
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.ficha-nombre {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--crema);
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+}
+
+.ficha-edad {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 20px;
+}
+
+.ficha-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.ficha-dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13.5px;
+  color: var(--tinta);
+  line-height: 1.5;
+}
+.ficha-dato strong {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-weight: 500;
+  min-width: 84px;
+  flex-shrink: 0;
+}
+
+.gauge-bloque { margin-top: 18px; }
+.gauge-label {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.gauge-svg {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+.gauge-valor {
+  text-align: center;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+.gauge-valor .numero {
+  font-family: var(--serif);
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--crema);
+  letter-spacing: -1px;
+}
+.gauge-valor .max {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--dorado);
+  font-style: italic;
+}
+
+.perfil-regulador {
+  background: var(--dorado-tenue);
+  border: 1px solid var(--dorado);
+  border-radius: 10px;
+  padding: 16px 18px;
+  text-align: center;
+  margin-top: 12px;
+}
+.perfil-regulador .label {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.perfil-regulador .nombre {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--crema);
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* ESCENA 7 · BLOQUES */
+.escena-bloques {
+  background: linear-gradient(180deg, var(--oscuro) 0%, #1a1815 100%);
+}
+
+.bloques-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.bloque-card {
+  background: rgba(245, 237, 216, 0.03);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-align: center;
+  transition: all var(--t-suave);
+}
+
+.bloque-numero {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--dorado);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.bloque-nombre {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--crema);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.bloque-extra {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--tinta-suave);
+  margin-top: 4px;
+  font-family: var(--sans);
+  font-style: italic;
+}
+
+/* ESCENA 8 · PRÁCTICA COMPLETA */
+.escena-practica {
+  background: var(--oscuro);
+  padding-top: 90px;
+}
+
+.practica-card {
+  width: 100%;
+  max-width: 460px;
+  background: linear-gradient(180deg, rgba(245, 237, 216, 0.04) 0%, rgba(245, 237, 216, 0.01) 100%);
+  border: 1px solid var(--dorado);
+  border-radius: 16px;
+  padding: 28px 22px;
+  margin-top: 24px;
+  text-align: left;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.practica-etiqueta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--oscuro);
+  background: var(--dorado);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.practica-titulo {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--crema);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.practica-titulo em {
+  font-style: italic;
+  color: var(--dorado);
+}
+
+.practica-subtitulo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--tinta);
+  margin-bottom: 26px;
+}
+
+.respiracion-visual {
+  width: 140px;
+  height: 140px;
+  margin: 16px auto 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.respiracion-visual .circulo-resp {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--dorado);
+  background: radial-gradient(circle, var(--dorado-tenue), transparent 70%);
+  animation: respiracionVisual 10s ease-in-out infinite;
+}
+.respiracion-visual .circulo-resp.exterior {
+  inset: 0;
+  opacity: 0.4;
+  animation-delay: 0.3s;
+}
+.respiracion-visual .texto-resp {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--dorado);
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+@keyframes respiracionVisual {
+  0%, 100% { transform: scale(0.85); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.elemento {
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--linea);
+}
+.elemento:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.elemento-numero {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.elemento-numero .num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: var(--dorado);
+}
+
+.elemento-titulo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--crema);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.elemento-cuerpo {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--tinta);
+}
+
+.elemento-cuerpo .destacado {
+  color: var(--dorado-claro);
+  font-style: italic;
+}
+
+.pasos-ejecucion {
+  list-style: none;
+  margin-top: 12px;
+  counter-reset: paso;
+}
+.pasos-ejecucion li {
+  padding: 12px 0 12px 38px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--tinta);
+  border-bottom: 1px dashed rgba(201, 169, 110, 0.12);
+  counter-increment: paso;
+}
+.pasos-ejecucion li:last-child { border-bottom: none; }
+.pasos-ejecucion li::before {
+  content: counter(paso, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--dorado);
+  font-weight: 500;
+}
+
+.clave-cec {
+  background: var(--dorado-tenue);
+  border-left: 3px solid var(--dorado);
+  padding: 18px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--crema);
+}
+
+.tabla-clinica {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+.tabla-clinica > div {
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.tabla-clinica .indica {
+  background: rgba(122, 140, 110, 0.1);
+  border-left: 3px solid var(--verde);
+}
+.tabla-clinica .contraindica {
+  background: rgba(180, 100, 100, 0.05);
+  border-left: 3px solid rgba(200, 130, 130, 0.45);
+}
+.tabla-clinica strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.tabla-clinica .indica strong { color: var(--verde); }
+.tabla-clinica .contraindica strong { color: rgba(220, 160, 160, 0.85); }
+
+.nota-rigor {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--tinta-suave);
+  margin-top: 28px;
+  max-width: 400px;
+  line-height: 1.5;
+}
+.nota-rigor strong {
+  color: var(--dorado-claro);
+  font-weight: 400;
+}
+
+/* ESCENA 9 · TESTIMONIOS */
+.escena-testimonios {
+  background: linear-gradient(180deg, #1a1815 0%, var(--oscuro) 100%);
+}
+
+.testimonios-aviso {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--tinta-suave);
+  margin-top: 16px;
+  font-style: italic;
+  max-width: 380px;
+  line-height: 1.5;
+}
+
+.testimonio {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(245, 237, 216, 0.03);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 28px 22px 22px;
+  margin-top: 22px;
+  text-align: left;
+  position: relative;
+}
+
+.testimonio::before {
+  content: '"';
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  font-family: var(--serif);
+  font-size: 76px;
+  color: var(--dorado);
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.testimonio-texto {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--crema);
+  margin-bottom: 18px;
+}
+
+.testimonio-firma {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-weight: 500;
+}
+.testimonio-firma span {
+  display: block;
+  color: var(--tinta-suave);
+  margin-top: 3px;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: none;
+}
+
+/* ESCENA 10 · CITAS */
+.escena-citas {
+  background: var(--oscuro);
+}
+
+.citas-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 28px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.cita {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 4.8vw, 22px);
+  line-height: 1.45;
+  color: var(--crema);
+  padding: 0 8px;
+  text-align: left;
+}
+.cita.alt {
+  text-align: right;
+  color: var(--dorado-claro);
+}
+.cita strong {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ESCENA 11 · CIERRE */
+.escena-cierre {
+  background: radial-gradient(ellipse at center, #1f1d19 0%, var(--oscuro-prof) 100%);
+  min-height: 100vh;
+}
+
+.cierre-contenido {
+  width: 100%;
+  max-width: 440px;
+}
+
+.cierre-mensaje {
+  font-family: var(--serif);
+  font-size: clamp(22px, 6vw, 28px);
+  line-height: 1.45;
+  color: var(--crema);
+  font-weight: 300;
+  margin: 28px 0;
+}
+.cierre-mensaje em {
+  font-style: italic;
+  color: var(--dorado);
+}
+
+.cierre-pregunta {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--tinta);
+  margin: 24px 0 36px;
+  line-height: 1.5;
+}
+
+.cta-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.cta-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--dorado);
+  color: var(--oscuro);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all var(--t-suave);
+  border: 1px solid var(--dorado);
+  cursor: pointer;
+}
+.cta-principal:hover, .cta-principal:active {
+  background: var(--dorado-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201, 169, 110, 0.25);
+}
+
+.cta-principal svg {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+}
+
+.cta-telefono {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--dorado-claro);
+  margin-top: 6px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.cta-nombre {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-top: 12px;
+  font-weight: 500;
+}
+.cta-nombre strong {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  color: var(--crema);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.lema-final {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--dorado);
+  margin: 50px 0 18px;
+  padding-top: 36px;
+  border-top: 1px solid var(--linea);
+}
+
+.firma-cierre {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--tinta-suave);
+  letter-spacing: 0.5px;
+}
+
+.firma-cierre strong {
+  display: block;
+  color: var(--dorado-claro);
+  font-weight: 500;
+  margin-top: 4px;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.aviso-legal {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  color: var(--tinta-suave);
+  line-height: 1.6;
+  margin-top: 32px;
+  padding: 16px 14px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+  border: 1px solid rgba(245, 237, 216, 0.06);
+  font-style: italic;
+}
+
+/* DOTS LATERAL */
+.dots-progreso {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  opacity: 0.7;
+  transition: opacity var(--t-suave);
+}
+.dots-progreso:hover { opacity: 1; }
+
+.dots-progreso button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--t-suave);
+}
+.dots-progreso button.activo {
+  background: var(--dorado);
+  transform: scale(1.5);
+  box-shadow: 0 0 12px rgba(201, 169, 110, 0.6);
+}
+.dots-progreso button:hover {
+  background: var(--dorado-claro);
+}
+
+@media (max-width: 480px) {
+  .dots-progreso { right: 8px; }
+  .dots-progreso button { width: 6px; height: 6px; }
+}
+
+/* BARRA PROGRESO */
+.barra-progreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  z-index: 200;
+}
+.barra-progreso .relleno {
+  height: 100%;
+  background: linear-gradient(to right, var(--dorado), var(--dorado-claro));
+  width: 0%;
+  transition: width 100ms linear;
+  box-shadow: 0 0 8px rgba(201, 169, 110, 0.6);
+}
+
+/* HEADER FLOTANTE */
+.header-flotante {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 520px;
+  padding: 16px 20px;
+  background: rgba(28, 26, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 150;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: all 500ms ease;
+}
+.header-flotante.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.header-flotante .marca {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--dorado);
+  letter-spacing: 1.5px;
+}
+.header-flotante .marca strong {
+  font-weight: 400;
+  letter-spacing: 2.5px;
+}
+.header-flotante .cta-mini {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--oscuro);
+  background: var(--dorado);
+  padding: 7px 14px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .header-flotante { border-radius: 0 0 24px 24px; }
+}
+
+/* MÓVIL ESTRECHO */
+@media (max-width: 380px) {
+  .escena { padding: 70px 22px 50px; }
+  h1.titulo-principal { font-size: 38px; }
+  h2.titulo-escena { font-size: 28px; }
+  .practica-card { padding: 24px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============== BOTÓN AUDIO FLOTANTE ============== */
+.boton-audio {
+  position: fixed;
+  top: 16px;
+  left: calc(50% - 244px);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(28, 26, 23, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--linea);
+  color: var(--dorado);
+  cursor: pointer;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 560px) {
+  .boton-audio { left: 14px; }
+}
+.boton-audio:hover {
+  background: rgba(28, 26, 23, 0.95);
+  border-color: var(--dorado);
+  transform: scale(1.05);
+}
+.boton-audio.sonando {
+  background: var(--dorado-tenue);
+  border-color: var(--dorado);
+}
+.boton-audio.sonando::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid var(--dorado);
+  opacity: 0;
+  animation: pulsoAudio 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes pulsoAudio {
+  0% { opacity: 0; transform: scale(0.92); }
+  50% { opacity: 0.55; transform: scale(1.0); }
+  100% { opacity: 0; transform: scale(1.18); }
+}
+.boton-audio svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: opacity 250ms ease;
+}
+.boton-audio .icono-play { opacity: 0; }
+.boton-audio.sonando .icono-mute { opacity: 0; }
+.boton-audio.sonando .icono-play { opacity: 1; }
+
+/* Pista visual sutil para invitar al primer click */
+.audio-hint {
+  position: fixed;
+  top: 22px;
+  left: calc(50% - 188px);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  opacity: 0;
+  z-index: 249;
+  pointer-events: none;
+  animation: hintAparece 4s ease 1.5s forwards;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .audio-hint { left: 70px; }
+}
+@keyframes hintAparece {
+  0% { opacity: 0; transform: translateX(-8px); }
+  25% { opacity: 0.85; transform: translateX(0); }
+  75% { opacity: 0.85; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+.audio-hint.ocultar { animation: none; opacity: 0 !important; }
+</style>
+</head>
+<body>
+
+<div class="barra-progreso"><div class="relleno" id="barraRelleno"></div></div>
+
+<!-- AUDIO AMBIENTAL CEC® -->
+<audio id="audioCEC" loop preload="auto">
+  <source src="audio/ambient-cec.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOTÓN DE AUDIO FLOTANTE -->
+<button class="boton-audio" id="botonAudio" aria-label="Activar música ambiental">
+  <svg class="icono-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+    <line x1="23" y1="9" x2="17" y2="15"/>
+    <line x1="17" y1="9" x2="23" y2="15"/>
+  </svg>
+  <svg class="icono-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+  </svg>
+</button>
+<span class="audio-hint" id="audioHint">Activa la música</span>
+
+<div class="header-flotante" id="headerFlotante">
+  <div class="marca">CEC<strong>®</strong></div>
+  <a href="#cierre" class="cta-mini" id="ctaHeader">Contactar</a>
+</div>
+
+<nav class="dots-progreso" id="dotsProgreso" aria-label="Navegación por escenas"></nav>
+
+<main class="experiencia" id="experiencia">
+
+<!-- ESCENA 1 · APERTURA -->
+<section class="escena escena-apertura" data-titulo="Apertura">
+  <div class="luz-dorada centro"></div>
+  <div class="contenido">
+    <div class="logo-cec aparece"><span>CEC</span></div>
+    <div class="cintillo aparece retraso-1">Método Integrativo</div>
+    <h1 class="titulo-principal aparece retraso-2">Cuerpo<br>Emoción<br>Consciencia</h1>
+    <div class="lema-grande" id="lemaGrande">
+      <span class="destello" data-destello="1">El cuerpo <em>escucha.</em></span>
+      <span class="destello" data-destello="2">La emoción <em>guía.</em></span>
+      <span class="destello" data-destello="3">La consciencia <em>transforma.</em></span>
+    </div>
+    <div class="creador aparece retraso-5">
+      Creado por
+      <strong>Kiko Martínez</strong>
+    </div>
+  </div>
+  <div class="scroll-indicador">Desliza</div>
+</section>
+
+<!-- ESCENA 2 · MANIFIESTO -->
+<section class="escena escena-manifiesto" data-titulo="Manifiesto">
+  <div class="luz-dorada top-derecha"></div>
+  <div class="contenido">
+    <div class="bloque-manifiesto">
+      <div class="cintillo aparece">El espacio</div>
+      <h2 class="titulo-escena aparece retraso-1">Aquí el tiempo<br><em>se detiene</em></h2>
+      <p class="cuerpo aparece retraso-2">No vas a encontrar listas rápidas ni consejos genéricos. No es una suma de técnicas. Es un proceso estructurado de integración terapéutica que respeta los tiempos de tu cuerpo, tu emoción y tu sistema nervioso.</p>
+      <p class="cuerpo aparece retraso-3">Cada paso del Método CEC® es una experiencia terapéutica completa, desarrollada con el rigor que tu bienestar merece. Tres pilares — cuerpo, emoción y consciencia — entrelazados en un único proceso evolutivo.</p>
+      <p class="cuerpo aparece retraso-4">El método no busca rapidez. Busca <span style="color: var(--dorado-claro); font-style: italic;">profundidad, regulación y evolución progresiva</span>.</p>
+      <div class="firma aparece retraso-5">— Kiko Martínez</div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 3 · TRES PILARES -->
+<section class="escena escena-pilares" data-titulo="Tres pilares">
+  <div class="luz-dorada abajo-izq"></div>
+  <div class="contenido">
+    <div class="cintillo aparece">Los tres pilares</div>
+    <h2 class="titulo-escena aparece retraso-1">Una arquitectura<br><em>integrativa</em></h2>
+    <div class="pilares">
+      <div class="pilar aparece retraso-2">
+        <div class="pilar-numero">01 · C</div>
+        <div class="pilar-titulo">Cuerpo</div>
+        <div class="pilar-frase">"El cuerpo no falla. Se adapta y expresa."</div>
+      </div>
+      <div class="pilar aparece retraso-3">
+        <div class="pilar-numero">02 · E</div>
+        <div class="pilar-titulo">Emoción</div>
+        <div class="pilar-frase">"La emoción conecta experiencia y síntoma."</div>
+      </div>
+      <div class="pilar aparece retraso-4">
+        <div class="pilar-numero">03 · C</div>
+        <div class="pilar-titulo">Consciencia</div>
+        <div class="pilar-frase">"La consciencia permite transformar."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 4 · ESTO NO ES / ESTO SÍ ES -->
+<section class="escena escena-distincion" data-titulo="Lo que es y lo que no">
+  <div class="contenido">
+    <div class="cintillo aparece">Lo que necesitas saber</div>
+    <h2 class="titulo-escena aparece retraso-1">No es lo<br>que <em>imaginas</em></h2>
+    <p class="lead aparece retraso-2">Aclaremos antes de empezar.</p>
+    <div class="dos-columnas">
+      <div class="columna no aparece retraso-3">
+        <h4>Esto NO es</h4>
+        <ul>
+          <li>Una rutina genérica copiada de internet</li>
+          <li>Un PDF más para sumar a la pila</li>
+          <li>Un "haz esto durante 21 días"</li>
+          <li>Un sustituto del médico o psicólogo</li>
+          <li>Una promesa de cambio rápido</li>
+        </ul>
+      </div>
+      <div class="columna si aparece retraso-4">
+        <h4>Esto SÍ es</h4>
+        <ul>
+          <li>Un protocolo terapéutico hecho a tu medida</li>
+          <li>Una arquitectura terapéutica para tu autogestión</li>
+          <li>Un proceso de integración cuerpo · emoción · consciencia</li>
+          <li>Una propuesta complementaria al tratamiento médico</li>
+          <li>Una invitación a la profundidad y la regulación</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 5 · EL PROCESO -->
+<section class="escena escena-proceso" data-titulo="El proceso">
+  <div class="luz-dorada top-derecha"></div>
+  <div class="contenido">
+    <div class="cintillo aparece">El proceso</div>
+    <h2 class="titulo-escena aparece retraso-1">Un cuestionario<br><em>lo cambia todo</em></h2>
+    <p class="lead aparece retraso-2">Antes del protocolo, una sola puerta de entrada.</p>
+
+    <div class="proceso-fase aparece retraso-3">
+      <div class="fase-etiqueta">Paso previo</div>
+      <div class="fase-caja previo">
+        <div class="fase-titulo">El <em>Cuestionario CEC®</em></div>
+        <div class="fase-desc">Un cuestionario detallado de 8 bloques. Aquí me cuentas, con calma, quién eres, cómo está tu cuerpo, qué emociones te habitan, cómo es tu sistema nervioso, qué hábitos sostienen tu día. Es el único paso que necesitas dar tú.</div>
+        <ul class="fase-lista">
+          <li>Contexto general</li>
+          <li>Motivo y objetivos</li>
+          <li>Dimensión corporal</li>
+          <li>Dimensión emocional</li>
+          <li>Sistema nervioso</li>
+          <li>Hábitos</li>
+          <li>Compromiso</li>
+          <li>Nutrición (opcional)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flecha-proceso aparece retraso-4"></div>
+
+    <div class="proceso-fase aparece retraso-4">
+      <div class="fase-etiqueta">A partir de ahí</div>
+      <div class="fase-caja">
+        <div class="fase-titulo">Yo preparo <em>tu protocolo</em></div>
+        <div class="fase-desc">Con tus respuestas hago una lectura clínica y emocional profunda. Calculo tu Escala de Regulación CEC® (ER-CEC®), identifico tu Perfil Regulador y diseño un programa personalizado completo. Todo bajo el Estándar CEC® de 6 elementos por práctica. Sin resumir. Sin acelerar.</div>
+      </div>
+    </div>
+
+    <div class="flecha-proceso aparece retraso-5"></div>
+
+    <div class="proceso-fase aparece retraso-5">
+      <div class="fase-etiqueta">Y a partir de ahí</div>
+      <div class="fase-caja">
+        <div class="fase-titulo">Un método de <em>autogestión</em></div>
+        <div class="fase-desc">Recibes todas las herramientas para hacer tú mismo tu propio seguimiento. La Escala ER-CEC®, el diario emocional, los registros y los protocolos están dentro de tu programa para que los apliques tú, a tu ritmo. El método te entrena en autonomía: el programa crece contigo, en tus tiempos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 6 · ELENA -->
+<section class="escena escena-elena" data-titulo="Mira por dentro">
+  <div class="luz-dorada centro"></div>
+  <div class="contenido">
+    <div class="aviso-demo">Caso demo · ejemplo ilustrativo</div>
+    <h2 class="titulo-escena aparece">Conoce a<br><em>Elena</em></h2>
+    <p class="lead aparece retraso-1">Así llega una persona al inicio del proceso.</p>
+
+    <div class="ficha-cliente aparece retraso-2">
+      <div class="ficha-nombre">Elena R.</div>
+      <div class="ficha-edad">42 años · Marketing manager</div>
+
+      <div class="ficha-datos">
+        <div class="ficha-dato"><strong>Motivo</strong><span>Insomnio de mantenimiento, dolor cervical-mandibular crónico y ansiedad de fondo desde hace 18 meses.</span></div>
+        <div class="ficha-dato"><strong>Tensión</strong><span>Cuello · trapecios · mandíbula con bruxismo nocturno.</span></div>
+        <div class="ficha-dato"><strong>Emoción</strong><span>Hipervigilancia, irritabilidad, sensación de "no poder parar".</span></div>
+        <div class="ficha-dato"><strong>Sueño</strong><span>5–6 h. Despertares 03:00 con rumiación.</span></div>
+        <div class="ficha-dato"><strong>Hábitos</strong><span>3 cafés/día. Vida sedentaria. Sin práctica regulada.</span></div>
+      </div>
+
+      <div class="gauge-bloque">
+        <div class="gauge-label">Escala ER-CEC® · Punto de partida</div>
+        <svg class="gauge-svg" viewBox="0 0 280 160">
+          <defs>
+            <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#C9A96E" stop-opacity="1"/>
+            </linearGradient>
+          </defs>
+          <path d="M 30 130 A 110 110 0 0 1 250 130" fill="none" stroke="rgba(245,237,216,0.08)" stroke-width="14" stroke-linecap="round"/>
+          <path id="gaugeArco" d="M 30 130 A 110 110 0 0 1 250 130" fill="none" stroke="url(#gaugeGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="346" stroke-dashoffset="346"/>
+          <text x="30" y="150" fill="rgba(245,237,216,0.5)" font-size="10" font-family="Raleway" text-anchor="middle">0</text>
+          <text x="140" y="150" fill="rgba(245,237,216,0.5)" font-size="10" font-family="Raleway" text-anchor="middle">25</text>
+          <text x="250" y="150" fill="rgba(245,237,216,0.5)" font-size="10" font-family="Raleway" text-anchor="middle">50</text>
+        </svg>
+        <div class="gauge-valor">
+          <span class="numero" id="gaugeNum">0</span><span class="max"> / 50</span>
+        </div>
+
+        <div class="perfil-regulador">
+          <div class="label">Perfil regulador identificado</div>
+          <div class="nombre">Mixto Desregulado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 7 · BLOQUES -->
+<section class="escena escena-bloques" data-titulo="Su programa contiene">
+  <div class="luz-dorada abajo-izq"></div>
+  <div class="contenido">
+    <div class="cintillo aparece">Lo que contiene su programa</div>
+    <h2 class="titulo-escena aparece retraso-1">Una arquitectura<br><em>completa</em></h2>
+    <p class="lead aparece retraso-2">Nueve bloques. Cada práctica bajo el Estándar CEC® de 6 elementos.</p>
+
+    <div class="bloques-grid">
+      <div class="bloque-card aparece retraso-2"><div class="bloque-numero">5</div><div class="bloque-nombre">Coaching<br>Terapéutico</div><div class="bloque-extra">herramientas</div></div>
+      <div class="bloque-card aparece retraso-2"><div class="bloque-numero">10</div><div class="bloque-nombre">Yoga<br>Terapéutico</div><div class="bloque-extra">asanas</div></div>
+      <div class="bloque-card aparece retraso-3"><div class="bloque-numero">5</div><div class="bloque-nombre">Estiramientos<br>específicos</div><div class="bloque-extra">prácticas</div></div>
+      <div class="bloque-card aparece retraso-3"><div class="bloque-numero">5</div><div class="bloque-nombre">Fortalecimiento<br>funcional</div><div class="bloque-extra">prácticas</div></div>
+      <div class="bloque-card aparece retraso-4"><div class="bloque-numero">5</div><div class="bloque-nombre">Respiración &amp;<br>Meditación</div><div class="bloque-extra">prácticas</div></div>
+      <div class="bloque-card aparece retraso-4"><div class="bloque-numero">5</div><div class="bloque-nombre">Herramientas<br>Emocionales</div><div class="bloque-extra">prácticas</div></div>
+      <div class="bloque-card aparece retraso-4"><div class="bloque-numero">5</div><div class="bloque-nombre">Lecturas<br>recomendadas</div><div class="bloque-extra">libros</div></div>
+      <div class="bloque-card aparece retraso-5"><div class="bloque-numero">5</div><div class="bloque-nombre">Suplementación<br>natural</div><div class="bloque-extra">con seguridad farmacológica</div></div>
+      <div class="bloque-card aparece retraso-5"><div class="bloque-numero">5</div><div class="bloque-nombre">Hábitos<br>diarios</div><div class="bloque-extra">prácticas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 8 · PRÁCTICA COMPLETA -->
+<section class="escena escena-practica" data-titulo="Una práctica completa">
+  <div class="contenido">
+    <div class="cintillo aparece">Muestra de profundidad</div>
+    <h2 class="titulo-escena aparece retraso-1">Así se desarrolla<br><em>cada práctica</em></h2>
+    <p class="lead aparece retraso-2">Una sola, completa. Bajo Estándar CEC® de 6 elementos.</p>
+
+    <article class="practica-card aparece retraso-3">
+      <div class="practica-etiqueta">Respiración · 01</div>
+
+      <div class="respiracion-visual">
+        <div class="circulo-resp exterior"></div>
+        <div class="circulo-resp"></div>
+        <div class="texto-resp">5 · 5</div>
+      </div>
+
+      <h3 class="practica-titulo">Respiración <em>Coherente</em> CEC® 5–5</h3>
+      <div class="practica-subtitulo">La puerta más rápida al sistema parasimpático.</div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">01</span> Objetivo terapéutico CEC®</div>
+        <div class="elemento-titulo">Sincronizar corazón y respiración</div>
+        <div class="elemento-cuerpo">Inducir un estado de <span class="destacado">coherencia cardiorrespiratoria</span> que activa el nervio vago, ralentiza la frecuencia cardíaca y devuelve el sistema nervioso autónomo al rango parasimpático en menos de tres minutos. Especialmente regulador en perfiles mixtos desregulados como el de Elena: cuello tenso, mandíbula apretada, mente acelerada, sueño fragmentado.</div>
+      </div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">02</span> Indicaciones y contraindicaciones</div>
+        <div class="tabla-clinica">
+          <div class="indica">
+            <strong>Indicada en</strong>
+            Estrés agudo, ansiedad reactiva, sobrecarga mental, insomnio de conciliación o mantenimiento, dolor cervical-mandibular tensional, bruxismo nocturno, hipervigilancia, transiciones difíciles entre actividad y descanso.
+          </div>
+          <div class="contraindica">
+            <strong>Contraindicaciones relativas</strong>
+            Hipotensión severa (acortar el tiempo), primer trimestre de embarazo (consultar con matrona), patología pulmonar grave (ajustar duración y profundidad). En crisis de pánico activa: usar versión 4–6 (espiración alargada).
+          </div>
+        </div>
+      </div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">03</span> Ejecución microdetallada</div>
+        <div class="elemento-titulo">Paso a paso</div>
+        <ol class="pasos-ejecucion">
+          <li>Siéntate con la columna larga, los pies bien apoyados en el suelo y las manos sobre los muslos con las palmas hacia arriba. Si lo prefieres, túmbate boca arriba con un cojín bajo las rodillas.</li>
+          <li>Cierra los ojos suavemente o baja la mirada al suelo a un metro. Permítete sentir el contacto del cuerpo con la superficie que te sostiene.</li>
+          <li>Lleva una mano al pecho y la otra al abdomen. Observa, sin cambiarlo, cómo respiras ahora mismo durante tres ciclos.</li>
+          <li>Comienza a alargar suavemente la inhalación nasal contando mentalmente cinco segundos. El aire entra primero al abdomen y luego al pecho.</li>
+          <li>Suelta el aire por la nariz también en cinco segundos, sin forzar. La mano del pecho desciende primero, después la del abdomen.</li>
+          <li>Mantén este ritmo 5–5 durante 3 a 5 minutos. Si pierdes la cuenta, vuelve sin juzgarte. Volver es la práctica.</li>
+          <li>Al terminar, deja la respiración libre durante un minuto más. Observa los cambios sutiles: temperatura de las manos, sensación en la mandíbula, ritmo del pensamiento.</li>
+        </ol>
+      </div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">04</span> Frecuencia</div>
+        <div class="elemento-cuerpo"><span class="destacado">Tres veces al día</span> durante las primeras cuatro semanas: al despertar (antes de coger el móvil), antes de la comida principal y en la transición al sueño. Mínimo 3 minutos por sesión. A partir de la semana cinco se puede ampliar a 5–8 minutos por sesión.</div>
+      </div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">05</span> Adaptación al perfil de Elena</div>
+        <div class="elemento-cuerpo">Por su patrón <span class="destacado">Mixto Desregulado</span> y la rumiación nocturna de las 03:00, se le indica una <strong>variante 4–6</strong> (inhalación 4 s · espiración 6 s) si se despierta de madrugada, sin abrir el móvil ni encender luces blancas. La espiración alargada hace de freno parasimpático específico para volver al sueño.</div>
+      </div>
+
+      <div class="elemento">
+        <div class="elemento-numero"><span class="num">06</span> Clave terapéutica CEC®</div>
+        <div class="clave-cec">No respiramos para calmarnos. Nos calmamos porque respiramos consciente.</div>
+      </div>
+    </article>
+
+    <div class="nota-rigor aparece retraso-4">Y así <strong>cada una</strong> de las prácticas de tu programa: yoga, estiramientos, herramientas emocionales, hábitos, suplementación. Sin resumir. Sin atajos.</div>
+  </div>
+</section>
+
+<!-- ESCENA 9 · TESTIMONIOS -->
+<section class="escena escena-testimonios" data-titulo="Testimonios">
+  <div class="luz-dorada top-derecha"></div>
+  <div class="contenido">
+    <div class="cintillo aparece">Quienes han pasado por aquí</div>
+    <h2 class="titulo-escena aparece retraso-1">Lo que <em>dicen</em><br>del proceso</h2>
+    <div class="testimonios-aviso aparece retraso-2">Testimonios reconstruidos a partir de casos reales del Método CEC®. Nombres y detalles modificados por respeto a la intimidad.</div>
+
+    <div class="testimonio aparece retraso-3">
+      <div class="testimonio-texto">Llevaba años intentando ordenar el caos por fuera. Aquí entendí que el cuerpo tenía algo que decirme antes que la cabeza.</div>
+      <div class="testimonio-firma">A. M. <span>43 años</span></div>
+    </div>
+
+    <div class="testimonio aparece retraso-4">
+      <div class="testimonio-texto">No es un programa. Es un acompañamiento real. Cada práctica tiene un porqué y se siente que está escrito para mí, no copiado.</div>
+      <div class="testimonio-firma">M. L. <span>51 años</span></div>
+    </div>
+
+    <div class="testimonio aparece retraso-5">
+      <div class="testimonio-texto">Pensé que sería otra rutina más. La diferencia fue notar que cada paso me hacía sentir más yo, no menos. La consciencia entra sin que te des cuenta.</div>
+      <div class="testimonio-firma">J. C. <span>38 años</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 10 · CITAS -->
+<section class="escena escena-citas" data-titulo="Citas">
+  <div class="contenido">
+    <div class="cintillo aparece">El método en voz alta</div>
+    <h2 class="titulo-escena aparece retraso-1">Frases que <em>sostienen</em><br>el proceso</h2>
+
+    <div class="citas-stack">
+      <div class="cita aparece retraso-2">"El cuerpo no falla. Se adapta y expresa." <strong>Principio I</strong></div>
+      <div class="cita alt aparece retraso-3">"La emoción conecta experiencia y síntoma." <strong>Principio II</strong></div>
+      <div class="cita aparece retraso-4">"La consciencia permite transformar." <strong>Principio III</strong></div>
+      <div class="cita alt aparece retraso-5">"Un listado no es un programa CEC®. Un programa CEC® es una sucesión de experiencias terapéuticas completas." <strong>Estándar CEC®</strong></div>
+      <div class="cita aparece retraso-5">"El programa crece contigo, no al revés." <strong>Autogestión</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCENA 11 · CIERRE -->
+<section class="escena escena-cierre" id="cierre" data-titulo="Comenzar">
+  <div class="luz-dorada centro"></div>
+  <div class="contenido">
+    <div class="logo-cec aparece" style="margin-bottom: 30px;"><span>CEC</span></div>
+    <div class="cintillo aparece retraso-1">¿Y ahora?</div>
+    <h2 class="titulo-escena aparece retraso-2">El primer paso<br>es <em>el cuestionario</em></h2>
+
+    <div class="cierre-contenido">
+      <p class="cierre-mensaje aparece retraso-3">Si has llegado hasta aquí, algo dentro <em>ya está escuchando</em>.</p>
+      <p class="cierre-pregunta aparece retraso-4">Para más información, no dudes en contactar conmigo.</p>
+
+      <div class="cta-bloque aparece retraso-5">
+        <a href="https://wa.me/34665865557?text=Hola%20Kiko%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20M%C3%A9todo%20CEC%C2%AE" class="cta-principal" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Contactar por WhatsApp
+        </a>
+        <div class="cta-telefono">+34 665 865 557</div>
+        <div class="cta-nombre">
+          Tu guía en el proceso
+          <strong>Kiko Martínez</strong>
+        </div>
+      </div>
+
+      <div class="lema-final aparece retraso-5">
+        El cuerpo escucha.<br>La emoción guía.<br>La consciencia transforma.
+      </div>
+
+      <div class="firma-cierre aparece retraso-5">
+        Tu bienestar,
+        <strong>mi máxima prioridad.</strong>
+      </div>
+
+      <div class="aviso-legal aparece retraso-5">
+        El Método Integrativo CEC® es una propuesta terapéutica complementaria. No sustituye el diagnóstico ni el tratamiento médico, psicológico o psiquiátrico. En caso de duda, consulta siempre con tu profesional sanitario de referencia. CEC® · Marca registrada · Kiko Martínez.
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function() {
+  'use strict';
+
+  /* FADE-IN AL SCROLL */
+  var elementosAparecen = document.querySelectorAll('.aparece');
+  var observerOpts = { root: null, threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
+
+  var observer = new IntersectionObserver(function(entradas) {
+    entradas.forEach(function(entrada) {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, observerOpts);
+
+  elementosAparecen.forEach(function(el) { observer.observe(el); });
+
+  /* LEMA SECUENCIAL */
+  var destellos = document.querySelectorAll('.lema-grande .destello');
+  destellos.forEach(function(d, i) {
+    setTimeout(function() { d.classList.add('activa'); }, 1400 + i * 1200);
+  });
+
+  /* GAUGE ER-CEC */
+  var arco = document.getElementById('gaugeArco');
+  var gaugeNum = document.getElementById('gaugeNum');
+  var gaugeAnimado = false;
+
+  function animarGauge() {
+    if (gaugeAnimado) return;
+    gaugeAnimado = true;
+    var valorFinal = 22;
+    var maximo = 50;
+    var porcentaje = valorFinal / maximo;
+    var longitudArco = 346;
+    var offsetFinal = longitudArco * (1 - porcentaje);
+
+    setTimeout(function() {
+      arco.style.transition = 'stroke-dashoffset 2200ms cubic-bezier(0.22, 1, 0.36, 1)';
+      arco.style.strokeDashoffset = offsetFinal;
+    }, 200);
+
+    var inicio = null;
+    var duracion = 2200;
+    function tick(timestamp) {
+      if (!inicio) inicio = timestamp;
+      var progreso = Math.min((timestamp - inicio) / duracion, 1);
+      var eased = 1 - Math.pow(1 - progreso, 3);
+      gaugeNum.textContent = Math.round(eased * valorFinal);
+      if (progreso < 1) requestAnimationFrame(tick);
+    }
+    setTimeout(function() { requestAnimationFrame(tick); }, 200);
+  }
+
+  var fichaCliente = document.querySelector('.ficha-cliente');
+  if (fichaCliente) {
+    var observerGauge = new IntersectionObserver(function(entradas) {
+      entradas.forEach(function(entrada) {
+        if (entrada.isIntersecting) {
+          animarGauge();
+          observerGauge.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    observerGauge.observe(fichaCliente);
+  }
+
+  /* BARRA PROGRESO + HEADER */
+  var barraRelleno = document.getElementById('barraRelleno');
+  var headerFlotante = document.getElementById('headerFlotante');
+
+  function actualizarBarra() {
+    var altura = document.documentElement.scrollHeight - window.innerHeight;
+    var scrolled = window.scrollY;
+    var porcentaje = altura > 0 ? (scrolled / altura) * 100 : 0;
+    barraRelleno.style.width = porcentaje + '%';
+
+    if (scrolled > window.innerHeight * 0.8) {
+      headerFlotante.classList.add('visible');
+    } else {
+      headerFlotante.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', actualizarBarra, { passive: true });
+  actualizarBarra();
+
+  /* DOTS NAVEGACIÓN */
+  var escenas = document.querySelectorAll('.escena');
+  var dotsContainer = document.getElementById('dotsProgreso');
+  var dots = [];
+
+  escenas.forEach(function(escena, i) {
+    var btn = document.createElement('button');
+    btn.setAttribute('aria-label', 'Ir a escena ' + (i + 1) + ': ' + escena.dataset.titulo);
+    btn.setAttribute('title', escena.dataset.titulo);
+    btn.addEventListener('click', function() {
+      escena.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    dotsContainer.appendChild(btn);
+    dots.push(btn);
+  });
+
+  var observerDots = new IntersectionObserver(function(entradas) {
+    entradas.forEach(function(entrada) {
+      if (entrada.isIntersecting) {
+        var index = Array.prototype.indexOf.call(escenas, entrada.target);
+        dots.forEach(function(d, i) {
+          d.classList.toggle('activo', i === index);
+        });
+      }
+    });
+  }, { threshold: 0.45 });
+
+  escenas.forEach(function(e) { observerDots.observe(e); });
+
+  /* BOTÓN CONTACTAR DEL HEADER → SCROLL AL CIERRE */
+  var ctaHeader = document.getElementById('ctaHeader');
+  if (ctaHeader) {
+    ctaHeader.addEventListener('click', function(e) {
+      e.preventDefault();
+      var cierre = document.getElementById('cierre');
+      if (cierre) cierre.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  /* AUDIO AMBIENTAL CEC® · activación por click con fade-in suave */
+  var audioCEC = document.getElementById('audioCEC');
+  var botonAudio = document.getElementById('botonAudio');
+  var audioHint = document.getElementById('audioHint');
+  var volumenObjetivo = 0.35;
+
+  if (audioCEC && botonAudio) {
+    audioCEC.volume = 0;
+
+    function fadeAudio(desde, hasta, duracion, onFin) {
+      var inicio = null;
+      function paso(t) {
+        if (!inicio) inicio = t;
+        var p = Math.min((t - inicio) / duracion, 1);
+        audioCEC.volume = desde + (hasta - desde) * p;
+        if (p < 1) requestAnimationFrame(paso);
+        else if (onFin) onFin();
+      }
+      requestAnimationFrame(paso);
+    }
+
+    botonAudio.addEventListener('click', function() {
+      /* Ocultar hint en cuanto el usuario interactúe */
+      if (audioHint) audioHint.classList.add('ocultar');
+
+      if (audioCEC.paused) {
+        var promesa = audioCEC.play();
+        if (promesa !== undefined) {
+          promesa.then(function() {
+            botonAudio.classList.add('sonando');
+            botonAudio.setAttribute('aria-label', 'Silenciar música ambiental');
+            fadeAudio(0, volumenObjetivo, 1200);
+          }).catch(function(err) {
+            console.log('Audio no disponible (verifica que audio/ambient-cec.mp3 exista):', err);
+          });
+        }
+      } else {
+        fadeAudio(audioCEC.volume, 0, 600, function() {
+          audioCEC.pause();
+          botonAudio.classList.remove('sonando');
+          botonAudio.setAttribute('aria-label', 'Activar música ambiental');
+        });
+      }
+    });
+  }
+
+  /* TECLADO */
+  document.addEventListener('keydown', function(e) {
+    if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
+
+    var activoIndex = -1;
+    dots.forEach(function(d, i) {
+      if (d.classList.contains('activo')) activoIndex = i;
+    });
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      var siguiente = Math.min(activoIndex + 1, escenas.length - 1);
+      escenas[siguiente].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      var anterior = Math.max(activoIndex - 1, 0);
+      escenas[anterior].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
